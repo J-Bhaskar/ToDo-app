@@ -38,7 +38,7 @@ public class HomeController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 	
-	/*
+	/* Todo Crud operations once the JWT generated  */
 	
 	@GetMapping("/")
 	public String home()
@@ -47,20 +47,25 @@ public class HomeController {
 	}
 	
 	
-	@GetMapping("/admin")
-	public String admin()
+	@GetMapping("/addTask")
+	public String add()
 	{
-		return "Admin";		
+		return "Task Added. !!";		
 	}
 	
 	
-	@GetMapping("/user")
-	public String user()
+	@GetMapping("/updateTask")
+	public String update()
 	{
-		return "User";
+		return "Task Updated. !!";
 	}
-	*/
+	@GetMapping("/deleteTask")
+	public String delete()
+	{
+		return "Task deleted. !!";
+	}
 	
+	/* 
 	@Autowired
 	ToDoService todo_serv;
 	@GetMapping("listTodo")
@@ -83,7 +88,7 @@ public class HomeController {
         todo_serv.updateTodo(c);
         return "Record Updated !";
     }
-	
+	*/
 	
 	@PostMapping("/signin")
 	public ResponseEntity<Response> generateJwtToken(@RequestBody Request request) throws Exception {
